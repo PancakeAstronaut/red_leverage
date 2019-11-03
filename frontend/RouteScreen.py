@@ -1,15 +1,15 @@
 from tkinter import *
 from pymsgbox import *
 from frontend import Login
-from frontend import RouteInfo
 from frontend import alert
+from frontend import enter_info
 from frontend import view_weather
 
 
 def editOptions():
     def plan():                   # functions to handle option box choices
         frontend.withdraw()
-        RouteInfo.info()
+        enter_info.enterinfo()
 
     def view():
         frontend.withdraw()
@@ -21,7 +21,7 @@ def editOptions():
 
     def log_out():
         x = confirm(text="Are you sure you want to Log Out?", title="Confirm Log Out",
-                   buttons=['Yes', 'No'])
+                    buttons=['Yes', 'No'])
         if x == 'Yes':
             frontend.withdraw()
             Login.main()
