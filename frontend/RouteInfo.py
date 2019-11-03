@@ -27,5 +27,6 @@ lblAlerts.grid(column=0, row=3)
 txtWC = Entry(riWindow, width=10)
 txtWC.grid(column=1, row=3)
 
+#working tittle
 
 riWindow.mainloop()
