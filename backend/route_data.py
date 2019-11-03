@@ -1,9 +1,30 @@
 import googlemaps as mapdata
 from googlemaps import directions
 from config import global_key_access
+import geocoder
+import reverse_geocoder
+from itertools import islice
+from collections import OrderedDict
 
 # Declare Google maps object using the API key from Google Cloud
 rawGmapdata = mapdata.Client(key=global_key_access.MAPS_API_KEY)
+
+
+def get_current_location():
+    loc = geocoder.ip('me')
+    lat = loc.lat
+    lng = loc.lng
+    coordinates = (lat, lng)
+    loc_list = reverse_geocoder.search(coordinates)
+    loc_dict = OrderedDict(loc_list[0])
+    slice_loc_list = islice(loc_dict.items(), 7)
+    newList = list(slice_loc_list)
+    cur_city = newList[2][1]
+    cur_state = newList[3][1]
+    cur_county = newList[4][1]
+    cur_nation = newList[5][1]
+    location = [cur_city, cur_state, cur_county, cur_nation]
+    return location
 
 
 def arb():          # arbitrary placeholder function
