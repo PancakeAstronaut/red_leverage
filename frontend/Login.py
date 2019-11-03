@@ -2,7 +2,7 @@ from tkinter import *
 from pymsgbox import *
 from frontend import SignUp
 from backend import dbConn
-from frontend import GridMainMenu
+from frontend import RouteScreen
 
 
 def main():
@@ -22,7 +22,7 @@ def main():
                     buttons=['OK'])
         elif username == str(validator[0]) and password == str(validator[1]):
             app.withdraw()
-            GridMainMenu.main_menu()
+            RouteScreen.editOptions()
         else:
             entuname.delete(first=0, last=45)
             entPassword.delete(first=0, last=45)

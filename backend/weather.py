@@ -40,11 +40,4 @@ def get_current(query):
 
 if __name__ == '__main__':
     arb()
-# get_current("locstring")
-# print(str(x[0]['Wind']['Speed']['Imperial']['Value']) + " " + str(x[0]['Wind']['Speed']['Imperial']['Unit']))
-# print(str(x[0]['Temperature']['Imperial']['Value']) + " " + str(x[0]['Temperature']['Imperial']['Unit']))
-# print(x[0]['PrecipitationType'])
-# print(x[0]['HasPrecipitation'])
-# print(x[0]['WeatherText'])
 
-# get_forecast("40.793252%2C%20-77.866309")
