@@ -10,11 +10,11 @@ from collections import OrderedDict
 rawGmapdata = mapdata.Client(key=global_key_access.MAPS_API_KEY)
 
 
-def get_current_location():
+def get_current_location():     # grabs the users current location
     loc = geocoder.ip('me')
-    lat = loc.lat
-    lng = loc.lng
-    coordinates = (lat, lng)
+    latitude = loc.lat
+    longitude = loc.lng
+    coordinates = (latitude, longitude)
     loc_list = reverse_geocoder.search(coordinates)
     loc_dict = OrderedDict(loc_list[0])
     slice_loc_list = islice(loc_dict.items(), 7)
@@ -23,7 +23,7 @@ def get_current_location():
     cur_state = newList[3][1]
     cur_county = newList[4][1]
     cur_nation = newList[5][1]
-    location = [cur_city, cur_state, cur_county, cur_nation]
+    location = [latitude, longitude, cur_city, cur_state, cur_county, cur_nation]
     return location
 
 
