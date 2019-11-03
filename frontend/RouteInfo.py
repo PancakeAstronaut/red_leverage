@@ -29,6 +29,7 @@ def info():
     entDestination.grid(column=1, row=5)
 
     riWindow.mainloop()
+    #go
 
 
 if __name__ == '__main__':
