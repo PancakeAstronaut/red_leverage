@@ -10,7 +10,7 @@ suWindow.configure(background="Light Blue")
 lblHead = Label(suWindow, text="Sign Up", bg="Light Blue", fg="Blue", font="none 40 bold")
 lblHead.grid(column=1, row=0)
 
-lblName = Label(suWindow, text="Full Name: ", bg="Light Blue")
+lblName = Label(suWindow, text="Username: ", bg="Light Blue")
 lblName.grid(column=0, row=1)
 
 entName = Entry(suWindow, width=45)
@@ -22,16 +22,21 @@ lblEmail.grid(column=0, row=2)
 entEmail = Entry(suWindow, width=45)
 entEmail.grid(column=1, row=2)
 
-lblAddress = Label(suWindow, text="Address: ", bg="Light Blue")
-lblName.grid(column=0, row=3)
+lblPassword = Label(suWindow, text="Password: ", bg="Light Blue")
+lblPassword.grid(column=0, row=4)
 
-entAddress = Entry(suWindow, width=45)
-entAddress.grid(column=1, row=3)
+entPassword = Entry(suWindow, width=45)
+entPassword.grid(column=1, row=4)
 
-lblCity = Label(suWindow, text="City: ", bg="Light Blue")
-lblCity.grid(column=0, row=4)
+terms = Checkbutton(suWindow, text="I agree to Working Names ToS and EULA")
+terms.grid(column=1, row=5)
 
-entCity = Entry(suWindow, width=45)
-entCity.grid(column=1, row=4)
+btnSignUp = Button(suWindow, text="Sign Up")
+btnSignUp.grid(column=1, row=6)
+btnSignUp.config(height=2, width=10)
+
+btnCancel = Button(suWindow, text="Cancel")
+btnCancel.grid(column=1, row=7)
+btnCancel.config(height=2, width=10)
 
 suWindow.mainloop()
