@@ -11,18 +11,23 @@ rawGmapdata = mapdata.Client(key=global_key_access.MAPS_API_KEY)
 
 
 def get_current_location():     # grabs the users current location
+    # gets the current location according to system IP address
     loc = geocoder.ip('me')
     latitude = loc.lat
     longitude = loc.lng
     coordinates = (latitude, longitude)
+    # searches for the address location with lat/long
     loc_list = reverse_geocoder.search(coordinates)
     loc_dict = OrderedDict(loc_list[0])
     slice_loc_list = islice(loc_dict.items(), 7)
+    # making a list out of an ordered dictionary
     newList = list(slice_loc_list)
+    # slicing though the list to get data
     cur_city = newList[2][1]
     cur_state = newList[3][1]
     cur_county = newList[4][1]
     cur_nation = newList[5][1]
+    # building coordinates that accuweather can use
     weatherCoord = str(latitude) + "%2C%20" + str(longitude)
     location = [weatherCoord, cur_city, cur_state, cur_county, cur_nation]
     return location
