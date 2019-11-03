@@ -16,7 +16,17 @@ def info():
     rptbox = Text(riWindow, height=10, width=10)
     rptbox.grid(column=5, row=4)
 
+    lblStarting = Label(riWindow, text="StartingLocation")
+    lblStarting.grid(column=1, row=2)
 
+    entStarting = Entry(riWindow, width=45)
+    entStarting.grid(column=1, row=3)
+
+    lblDestination = Label(riWindow, text="Destination")
+    lblDestination.grid(column=1, row=4)
+
+    entDestination = Entry(riWindow, width=45)
+    entDestination.grid(column=1, row=5)
 
     riWindow.mainloop()
 
