@@ -23,7 +23,8 @@ def get_current_location():     # grabs the users current location
     cur_state = newList[3][1]
     cur_county = newList[4][1]
     cur_nation = newList[5][1]
-    location = [latitude, longitude, cur_city, cur_state, cur_county, cur_nation]
+    weatherCoord = str(latitude) + "%2C%20" + str(longitude)
+    location = [weatherCoord, cur_city, cur_state, cur_county, cur_nation]
     return location
 
 
