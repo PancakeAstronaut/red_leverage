@@ -26,7 +26,6 @@ def get_forecast(query):
     requestString = "{}{}?apikey={}&details=true".format(forecast_base_string, location_keyval, apikey)
     response = requests.get(requestString)
     forecast_dict = json.loads(response.text)
-    print(forecast_dict)
     return forecast_dict
 
 
