@@ -21,11 +21,12 @@ def enterinfo():
     def submit():
         startpoint = entStarting.get()
         endpoint = entDestination.get()
-        if startpoint == "":
-            start = route_data.get_current_location()
+        if startpoint == " ":
+            tmp = route_data.get_current_location()
+            start = tmp[0]
         else:
             start = startpoint
-        if endpoint == "":
+        if endpoint == " ":
             entStarting.delete(first=0, last=45)
             entDestination.delete(first=0, last=45)
             confirm(text="Destination cannot be Null", title="Null Value Exception", buttons=['OK'])
